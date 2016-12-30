@@ -8,6 +8,8 @@ import java.util.UUID;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
+import org.springframework.boot.context.web.SpringBootServletInitializer;
+import org.springframework.web.WebApplicationInitializer;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -18,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-public class UiApplication {
+public class UiApplication extends SpringBootServletInitializer implements WebApplicationInitializer {
 
 	@RequestMapping("/user")
 	public Principal user(Principal user) {
